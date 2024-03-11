@@ -1,0 +1,354 @@
+@charset "utf-8";
+/* @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); */
+/* 
+/* === 戻る・進む矢印横の▼ === */
+/*
+#back-forward-dropmarker,
+*/
+/*ナビゲーションツールバーのボタン間隔*/
+/*@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");*/ 
+/* only needed once */
+ #nav-bar toolbarbutton {
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+}
+
+
+/*縦アドオンバーの配置*/
+	#toolbox_abv {
+	  order: 10 !important;
+	}
+	#sidebar-box {
+	  order: 11 !important;
+	}
+	#sidebar-splitter {
+	  order: 12 !important;
+	}
+	#toolbox_vab {
+	  order: 13 !important;
+	}
+	#appcontent{
+	  order: 14 !important;
+	}
+
+
+
+*/
+/* タブ幅の設定 */
+.tabbrowser-tab[fadein]:not([pinned]) {
+    min-width: 128px !important;/* タブ幅の設定　最小値 デフォルト 76px */
+    max-width: 183px !important;/* タブ幅の設定　最大値 デフォルト 225px*/
+flex-grow: 1;
+}
+/* アクティブなタブの幅を大きくする */
+.tabbrowser-tab[visuallyselected="true"]:not([pinned]) {
+    min-width: 225px !important;
+}
+.tabbrowser-tab:not([visuallyselected="true"]):not([pinned]):hover {
+    min-width: 225px !important;
+}
+
+/* タブからはみ出した文字を隠さない */
+/*
+.tab-label-container[selected] {
+    overflow: visible !important;
+    mask-image: none !important;
+}
+*/
+
+
+
+/*TabバーにTab一覧表示ボタン『V』の常時表示化*/
+#alltabs-button {
+  visibility: visible !important;}
+
+/* LIST-ALL-TABS-常に表示 */
+＃tabbrowser-tabs〜
+＃alltabs-button {
+  visibility：visible！important;}
+
+/* SCROLLBOX-スクロールバー */
+.arrowscrollbox-scrollbox {overflow-y：auto！important;}
+.autorepeatbutton-up、.autorepeatbutton-down {display：none！important;}
+
+
+
+
+
+/*　検索バーの右側に履歴を出すボタンを表示　*/
+#searchbar .autocomplete-history-dropmarker {
+display: -moz-box !important;
+-moz-binding: url("chrome://global/content/bindings/autocomplete.xml#history-dropmarker");
+}
+
+/* 検索バーの → を常に表示するように固定 */
+.search-go-button {
+display: inline-block !important;
+}
+
+
+/* 未読み込みのタブ 未読み込みのタブを半透明にする */
+.tabbrowser-tab[pending] {
+    opacity: .6;
+}
+/* 選択中のタブ 選択中のタブを太字にする */
+.tabbrowser-tab[selected] {
+    font-weight: bold;
+}
+
+
+/*右クリックメニューから「他のタブをすべて閉じる」を消す*/
+#tabContextMenu #context_closeOtherTabs {
+visibility: collapse !important;
+display: none !important;
+}
+
+
+
+/* ::::: 未読のタブを区別する ::::: */
+/* アクティブなタブ（太字） */
+.tabbrowser-tab[selected="true"] .tab-text.tab-label {
+font-weight: bold !important;
+}
+/* 選択中のタブ */
+.tabbrowser-tab[selected] .tab-text {
+  font-weight: bold !important;
+}
+/* 未読のタブ（赤色） */
+.tabbrowser-tab[unread="true"] .tab-text.tab-label {
+color: #cc0000 !important;
+}
+/* 未読で、読み込んでないタブ（青色）lightテーマ用 */
+/*
+.tabbrowser-tab[pending="true"] .tab-text.tab-label {
+color: #0000cd !important;
+}
+*/
+
+/* 未読で、読み込んでないタブ（薄青色）ダークテーマ用#00B0FF */
+.tabbrowser-tab[pending="true"] .tab-text.tab-label {
+color: #15aabf !important;
+}
+
+/* Mark new and unread tabs 未読タブCSS */
+.tabbrowser-tab[unread] {
+font-style: italic !important;
+}
+.tabbrowser-tab[busy] {
+font-style: italic !important;
+}
+.tabbrowser-tab[pending] {
+font-style: italic !important;
+}
+/*ピン止めされてないタブの幅指定
+.tabbrowser-tab:not([pinned]) {
+min-width: 10px !important;
+} 
+*/
+
+/* Unread Tabs Restorer
+.tabbrowser-tab[pending] { /* Set styles for unloaded tab */ }
+.tabbrowser-tab[busy] { /* Set styles for loading tab */ }
+.tabbrowser-tab[unread] { /* Set styles for unread tab */ }
+
+
+.tabbrowser-tab[pending] { /* Set styles for unloaded tab */ }
+.tabbrowser-tab[busy] { /* Set styles for loading tab */ }
+.tabbrowser-tab[titlechanged] { /* Set styles for unread tab */ }
+
+.tabbrowser-tab[pending] { color: red !important; }
+.tabbrowser-tab[busy] { color: dimgray !important; }
+.tabbrowser-tab[titlechanged] { color: blue !important; }
+*/
+
+
+
+/*Tab Count Wideの設定*/
+/* Normally has right/left-padding of 1px - remove it all */
+/* 通常、 右/左-のパディングは1pxですが、すべて削除します。 */
+/* 2pxにする */
+toolbarbutton#tab-counter-wide_jmmerz_github-browser-action {
+    padding-left  : 2px !important;
+    padding-right : 2px !important;
+}
+
+/* Normally has right/left-padding of 6px - remove it all */
+/* 通常は6pxの右/左パディングがありますが、全て削除します。 */
+toolbarbutton#tab-counter-wide_jmmerz_github-browser-action 
+> .toolbarbutton-badge-stack {
+    padding-top    : 4px !important;
+    padding-bottom : 4px !important;
+    padding-left   : 7px !important;
+    padding-right  : 7px !important;
+}
+
+/* Standard height/width is 16px/16px. Tabbar height is 28px so that's pretty fixed,
+ * but we can adjust width as needed. These should match the icon dimensions in the code. */
+/* 標準の高さ/幅は16px/16pxです。Tabbarの高さは28pxなので、かなり固定されています。
+ * しかし、必要に応じて幅を調整できます。これらは、コード内のアイコンの寸法と一致するはずです。*/
+ toolbarbutton#tab-counter-wide_jmmerz_github-browser-action > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    height: 32px !important;
+    width: 192px !important;
+}
+
+
+/* Standard height/width is 16px/16px. Tabbar height is 28px so that's pretty fixed,
+ * but we can adjust width as needed. These should match the icon dimensions in the code. */
+/* 初期値 */
+toolbarbutton#tab-counter-wide_jmmerz_github-browser-action > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    height: 28px !important;
+    width: 56px !important;
+}
+
+
+
+
+
+
+
+
+/*ツールチップのサイズを大きく*/
+#btTooltip,
+#un-toolbar-tooltip,
+#tooltip,
+.tooltip,
+#aHTMLTooltip,
+#urlTooltip,
+tooltip
+{
+  font-size: 16px !important; 
+  font-family: tahoma, verdana !important;
+  background-color: #FFFFE0 !important;
+  color: #000000 !important;
+  -moz-appearance: none !important;
+  border-color: #000000 !important ;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+}
+
+
+
+/*
+    Firefox Quantumでステータスバーを復活
+    Display the status bar in Firefox Quantum (version 61+)
+    permanently at the bottom of the browser window.
+    Code below works best for the Light Firefox theme and is based on:
+    https://github.com/MatMoul/firefox-gui-chrome-css/blob/master/chrome/userChrome.css
+    This userChrome.css file was last modified on: 28-Jun-2018.
+    Tested to work with Firefox 61 on Windows.
+    Related blog post: http://www.optimiced.com/en/?p=1727
+    */
+
+#browser-bottombox {
+    height: 20px;
+    border-top: solid 1px #CCC;
+}
+
+.browserContainer>statuspanel {
+    left: 4px !important;
+    bottom: 0px;
+    transition-duration: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+}
+
+.browserContainer>statuspanel>.statuspanel-inner>.statuspanel-label {
+.browserContainer>#statuspanel>#statuspanel-inner>#statuspanel-label {
+    margin-left: 0px !important;
+    border: none !important;
+    padding: 0px !important;
+}
+
+/*
+window[inFullscreen="true"] #browser-bottombox {
+    display:none !important;
+}
+
+window[inFullscreen="true"] .browserContainer>#statuspanel[type="overLink"] 
+#statuspanel-label {
+    display:none !important;
+}
+*/
+
+
+
+
+
+/* Indicate Security Level in URL Bar */
+/* セキュリティレベルによってURLバーを色変え */
+#urlbar[level="high"] > .autocomplete-textbox-container {
+	background-color: #FEFFBB !important;
+}
+#urlbar[level="low"] > .autocomplete-textbox-container {
+	background-color: #BBFFBB
+}
+#urlbar[level="broken"] > .autocomplete-textbox-container {
+	background-color: #FFBBBB !important;
+}
+
+/* URLでIMEを無効 */
+/* Inactivate IME in URL Bar */
+#urlbar *|input {
+	ime-mode: inactive !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ::::: Firefox 8 「更新」ボタン左側の縦線を復活 ::::: */
+#urlbar > toolbarbutton {
+-moz-border-start: 1px solid rgba(0,0,0,.25) !important;
+}
+#urlbar > toolbarbutton:not([disabled]):active:hover,
+#urlbar-reload-button:not(:hover) {
+-moz-padding-start: 2px !important;
+}
+
+
+*/
+/* change all the fonts together */
+ {
+window,
+menubar,
+menubutton,
+menulist,
+menu,
+menuitem,
+textbox,
+toolbar,
+toolbarbutton,
+.tab-text,
+tree,
+tooltip,
+sidebarheader,
+statusbar {
+font-size: 10pt !important;
+font-family: "MaruGoAA-SR" !important;
+}
